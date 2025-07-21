@@ -1,0 +1,20 @@
+services:
+  qwen-vl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: qwen-vl:latest
+    container_name: qwen-vl-container
+    volumes:
+      - /home/shimosaba/python_project/Qwen2.5-VL:/workspace
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    tty: true
+    stdin_open: true
