@@ -3,6 +3,12 @@
 # !pip list | grep torch
 # !pip list | grep flash_attn
 
+# lmdeploy                  0.10.1
+# transformers              4.57.0
+# torch                     2.8.0
+# torchvision               0.23.0
+# flash_attn                2.8.3
+
 from lmdeploy import pipeline, TurbomindEngineConfig, GenerationConfig
 import time
 
